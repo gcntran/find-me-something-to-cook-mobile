@@ -18,6 +18,7 @@ Step 2:
   4. Random recipes -> ScrollView, RecipeCard.tsx
   5. A tab for favorite recipes (feature will be developed on next assignment)
   6. Dark mode switch -> Switch, ThemeSwitch.tsx
+  7. A bottom tab to navigate between Home and Favorites/Notebook (for multi screen assignment)
 Part B: Development
 
 npx create-expo-app --template blank command
