@@ -59,3 +59,6 @@ Code Quality:
 Styling:
 - Apply styles to create a visually appealing layout.
 - Follow Material Design Guidelines (Android) where possible.
+
+
+theme.ts
