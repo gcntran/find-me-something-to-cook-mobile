@@ -11,7 +11,13 @@ Step 2:
   2. Read full recipe.
   3. Add recipe to favorites.
   4. Randomize recipe.
-
+- Single screen layout:
+  1. Header -> StatusBar
+  2. Search bar -> TextInput, SearchBar.tsx
+  3. Place for the search results (3) -> ScrollView.tsx, RecipeCard.tsx
+  4. Random recipes -> ScrollView, RecipeCard.tsx
+  5. A tab for favorite recipes (feature will be developed on next assignment)
+  6. Dark mode switch -> Switch, ThemeSwitch.tsx
 Part B: Development
 
 npx create-expo-app --template blank command
@@ -29,8 +35,8 @@ Components:
   StyleSheet
   Button
   Switch
-  Third-Party Modules:
 
+Third-Party Modules:
 Install and use at least one third-party module from either:
 npm | Node Package Manager
 Expo | Reference
