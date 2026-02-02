@@ -1,0 +1,45 @@
+Part A: Ideation & Planning
+Step 1:
+- Theme: Recipe Viewer Application
+- Purpose: To create a user-friendly application that allows users to browse, search, and view recipes.
+- Target Audience: Home cooks, food enthusiasts, and anyone interested in cooking.
+- Name: Find Me Something to Cook 
+Step 2: 
+- Platform: Android with React Native, using TheMealDB API
+- Features:
+  1. Search recipes by ingredients.
+  2. Read full recipe.
+  3. Add recipe to favorites.
+  4. Randomize recipe.
+
+Part B: Development
+
+npx create-expo-app --template blank command
+
+Git Version Control:
+- Add Git Repo
+- Upload to GitHub
+
+Components:
+  View
+  Text
+  Image
+  TextInput
+  ScrollView
+  StyleSheet
+  Button
+  Switch
+  Third-Party Modules:
+
+Install and use at least one third-party module from either:
+npm | Node Package Manager
+Expo | Reference
+
+Code Quality:
+- let and const keywords
+- Template literals for string interpolation
+- Function expressions and arrow functions
+
+Styling:
+- Apply styles to create a visually appealing layout.
+- Follow Material Design Guidelines (Android) where possible.
