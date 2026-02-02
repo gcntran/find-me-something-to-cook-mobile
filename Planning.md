@@ -24,6 +24,8 @@ Step 2:
   - Open the app -> Home screen -> random recipes appear -> users search ingredients for recipes 
   True -> View recipe -> Add to Notebook (if users like the recipes)
   False -> loading -> no recipe found -> search again
+
+  For next assignment (multi-page screen)
   - Users navigate to the Notebook tab -> View recipe/Delete recipe from Notebook
 
 Part B: Development
