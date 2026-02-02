@@ -19,6 +19,13 @@ Step 2:
   5. A tab for favorite recipes (feature will be developed on next assignment)
   6. Dark mode switch -> Switch, ThemeSwitch.tsx
   7. A bottom tab to navigate between Home and Favorites/Notebook (for multi screen assignment)
+- User flows:
+  - Open the app -> Home screen -> random recipes appear -> users can select any recipe -> View recipe -> Add to Notebook (if users like the recipes)
+  - Open the app -> Home screen -> random recipes appear -> users search ingredients for recipes 
+  True -> View recipe -> Add to Notebook (if users like the recipes)
+  False -> loading -> no recipe found -> search again
+  - Users navigate to the Notebook tab -> View recipe/Delete recipe from Notebook
+
 Part B: Development
 
 npx create-expo-app --template blank command
