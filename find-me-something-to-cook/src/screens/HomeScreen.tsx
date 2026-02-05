@@ -15,12 +15,6 @@ const HomeScreen = () => {
                 padding: 20,
             }}
         >
-            <Text style={{ color: theme.colors.textBlack, fontSize: 24 }}>
-                Search
-            </Text>
-
-            {/* Toggle for switch */}
-            <ThemeSwitch />
 
             {/* Other components */}
             {/* Search Bar */}

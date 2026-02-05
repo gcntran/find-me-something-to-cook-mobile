@@ -1,5 +1,38 @@
 // theme.ts
 import { createContext, useContext, useState, ReactNode } from "react";
+import { MD3DarkTheme, MD3LightTheme } from "react-native-paper";
+import { DefaultTheme as NavLight, DarkTheme as NavDark, Theme as NavigationTheme, } from "@react-navigation/native";
+
+// Paper themes
+export const paperLightTheme = MD3LightTheme;
+export const paperDarkTheme = MD3DarkTheme;
+
+// Navigation themes derived from Paper colors
+export const navigationLightTheme: NavigationTheme = {
+    ...NavLight,
+    colors: {
+        ...NavLight.colors,
+        background: paperLightTheme.colors.background,
+        card: paperLightTheme.colors.elevation.level2,
+        text: paperLightTheme.colors.onBackground,
+        border: paperLightTheme.colors.outline,
+        primary: paperLightTheme.colors.primary,
+        notification: paperLightTheme.colors.primary,
+    },
+};
+
+export const navigationDarkTheme: NavigationTheme = {
+    ...NavDark,
+    colors: {
+        ...NavDark.colors,
+        background: paperDarkTheme.colors.background,
+        card: paperDarkTheme.colors.elevation.level2,
+        text: paperDarkTheme.colors.onBackground,
+        border: paperDarkTheme.colors.outline,
+        primary: paperDarkTheme.colors.primary,
+        notification: paperDarkTheme.colors.primary,
+    },
+};
 
 export type Theme = {
     colors: {

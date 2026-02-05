@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useTheme } from "../theme/theme";
 import { Feather } from '@expo/vector-icons';
 
+
 export const ThemeSwitch = () => {
     const { theme, isDark, toggleTheme } = useTheme();
 
