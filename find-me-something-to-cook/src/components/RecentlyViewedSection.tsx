@@ -1,0 +1,1 @@
+import { RecentlyViewedSectionProps } from '../types';
