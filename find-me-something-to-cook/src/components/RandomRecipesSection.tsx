@@ -39,11 +39,16 @@ export function RandomRecipesSection({
             />
 
             <Button
-                mode="outlined"
+                mode="contained-tonal"
                 compact
                 onPress={onRefresh}
-                style={{ marginTop: 8, alignSelf: 'flex-start', borderRadius: 8 }}
-                textColor={theme.colors.primary}
+                style={{ 
+                    width: 120,
+                    marginTop: 12, 
+                    alignSelf: 'center', 
+                    backgroundColor: theme.colors.primary,
+                    borderRadius: 20 }}
+                textColor={theme.colors.background}
             >
                 Refresh
             </Button>

@@ -23,34 +23,34 @@ const HomeScreen = () => {
     // Search handler
     const handleSearch = async (query: string) => {
         if (!query.trim()) {
-          setSearchResults([]);
-          return;
-        }
-      
-        try {
-          const res = await fetch(
-            `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
-          );
-          const data = await res.json();
-      
-          if (!data.meals) {
             setSearchResults([]);
             return;
-          }
-      
-          const mapped = data.meals.map((m: any) => ({
-            id: m.idMeal,
-            title: m.strMeal,
-            image: m.strMealThumb,
-            saved: false,
-          }));
-      
-          setSearchResults(mapped);
-        } catch (err) {
-          console.log("Search error:", err);
         }
-      };
-      
+
+        try {
+            const res = await fetch(
+                `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
+            );
+            const data = await res.json();
+
+            if (!data.meals) {
+                setSearchResults([]);
+                return;
+            }
+
+            const mapped = data.meals.map((m: any) => ({
+                id: m.idMeal,
+                title: m.strMeal,
+                image: m.strMealThumb,
+                saved: false,
+            }));
+
+            setSearchResults(mapped);
+        } catch (err) {
+            console.log("Search error:", err);
+        }
+    };
+
 
     const handlePressRecipe = (recipe: Recipe) => {
         setRecentlyViewed(prev => {

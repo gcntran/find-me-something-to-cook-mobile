@@ -3,6 +3,8 @@ import { Card, Text, IconButton } from 'react-native-paper';
 import { Feather } from '@expo/vector-icons';
 import { useTheme } from '../theme/theme';
 import { RecipeCardProps } from '../types';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 
 export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCardProps) {
     const { theme } = useTheme();
@@ -14,7 +16,7 @@ export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCar
                 styles.card,
                 { backgroundColor: theme.colors.header }
             ]}
-            mode="elevated"
+            mode="contained"
         >
             <View style={styles.imageWrapper}>
                 <Card.Cover
@@ -24,8 +26,8 @@ export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCar
 
                 <IconButton
                     icon={() => (
-                        <Feather
-                            name="heart"
+                        <MaterialCommunityIcons
+                            name={isSaved ? "heart" : "heart-outline"}
                             size={18}
                             color={isSaved ? theme.colors.primary : theme.colors.textBlack}
                         />
@@ -50,16 +52,25 @@ export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCar
 
 const styles = StyleSheet.create({
     card: {
-        width: 160,
+        width: 200,
         marginRight: 12,
-        borderRadius: 14,
+        borderRadius: 10,
         overflow: 'hidden',
+    },
+
+    shadowWrapper: {
+        borderRadius: 10,
+        shadowColor: '#000',
+        shadowOpacity: 0.10,
+        shadowRadius: 6,
+        shadowOffset: { width: 0, height: 5 },
+        elevation: 4,
     },
 
     imageWrapper: {
         width: '100%',
         height: 120,
-        borderRadius: 14,
+        borderRadius: 10,
         overflow: 'hidden',
     },
 
