@@ -1,15 +1,19 @@
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { useTheme } from "../theme/theme";
+import { Feather } from '@expo/vector-icons';
 
 export const ThemeSwitch = () => {
-    const { isDark, toggleTheme } = useTheme();
+    const { theme, isDark, toggleTheme } = useTheme();
 
     return (
-        <Button
-            title={isDark ? "Light Mode" : "Dark Mode"}
-            onPress={toggleTheme}
-        />
+        <TouchableOpacity onPress={toggleTheme}>
+            <Feather
+                name={isDark ? "sun" : "moon"}
+                size={28}
+                color={theme.colors.textBlack}
+            />
+        </TouchableOpacity>
     );
 };
 
