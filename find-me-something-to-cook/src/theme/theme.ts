@@ -1,31 +1,64 @@
-export const theme = {
+// theme.ts
+
+export type Theme = {
     colors: {
-        primary: '#805436',
-        primaryLight: '#B8794F',
-        textDark: '#333333',
-        textBlack: '#000000',
-        textMuted: '#555555',
+        background: string;
+        header: string;
+        toast: string;
 
-        background: '#FFFef8',
-        card: '#FFFFFF',
-        stickyNote: '#FFF8D6',
-        toast: '#FFE565',
+        primary: string;
+        primaryLight: string;
 
-        border: '#000000',
-        hover: '#888888',
-        spinnerTrack: '#F3F3F3',
-        spinnerHighlight: '#805436',
+        textBlack: string;
+        textDark: string;
+        textMuted: string;
+
+        hover: string;
+        border: string;
+
+        spinnerTrack: string;
+        spinnerHighlight: string;
+    };
+};
+
+export const lightTheme: Theme = {
+    colors: {
+        background: "#F6F3EE",
+        header: "#FFFFFF",
+        toast: "#FFE565",
+
+        primary: "#805436",
+        primaryLight: "#B8794F",
+
+        textBlack: "#000000",
+        textDark: "#333333",
+        textMuted: "#555555",
+
+        hover: "#888888",
+        border: "#000000",
+
+        spinnerTrack: "#F3F3F3",
+        spinnerHighlight: "#805436",
     },
+};
 
-    radius: {
-        small: 2,
-        medium: 5,
-        large: 10,
-    },
+export const darkTheme: Theme = {
+    colors: {
+        background: "#1E1B18",
+        header: "#26221E",
+        toast: "#A88C3A",
 
-    fonts: {
-        body: 'Courier New',
-        heading: 'Courier New',
-        mono: 'Courier New',
+        primary: "#C08A5F",
+        primaryLight: "#A06E4A",
+
+        textBlack: "#F6F3EE",   // becomes light text
+        textDark: "#C9C3BC",
+        textMuted: "#A79F96",
+
+        hover: "#4A423A",
+        border: "#3A342E",
+
+        spinnerTrack: "#3A342E",
+        spinnerHighlight: "#C08A5F",
     },
 };
