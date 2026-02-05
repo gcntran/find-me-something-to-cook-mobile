@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { lightTheme, darkTheme } from "../theme/theme";
 import { useTheme } from "../theme/theme";
 import { ThemeSwitch } from '../components/ThemeSwitch';
+import SearchBar from '../components/SearchBar';
 
 const HomeScreen = () => {
     const { theme } = useTheme();
@@ -22,6 +23,9 @@ const HomeScreen = () => {
             <ThemeSwitch />
 
             {/* Other components */}
+            {/* Search Bar */}
+            <SearchBar />
+
         </View>
     );
 };
