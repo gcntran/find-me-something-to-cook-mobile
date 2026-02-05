@@ -20,6 +20,10 @@ const HomeScreen = () => {
             {/* Search Bar */}
             <SearchBar />
 
+            {/* Search Results */}
+            {/* Random Recipes */}
+            {/* Recently Viewed */}
+
         </View>
     );
 };
