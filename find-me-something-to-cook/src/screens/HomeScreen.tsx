@@ -48,6 +48,32 @@ const HomeScreen = () => {
         );
     };
 
+    // Refresh handler for random recipes
+    const refreshRandom = useCallback(() => {
+        setRefreshing(true);
+        setTimeout(() => {
+            const newRandom: Recipe[] = [
+                {
+                    id: Math.random(),
+                    title: "Random Recipe 1",
+                    image: "https://picsum.photos/300?1",
+                },
+                {
+                    id: Math.random(),
+                    title: "Random Recipe 2",
+                    image: "https://picsum.photos/300?2",
+                },
+                {
+                    id: Math.random(),
+                    title: "Random Recipe 3",
+                    image: "https://picsum.photos/300?3",
+                },
+            ];
+            setRandomRecipes(newRandom);
+            setRefreshing(false);
+        }, 800);
+    }, []);
+
 
     return (
         <View
