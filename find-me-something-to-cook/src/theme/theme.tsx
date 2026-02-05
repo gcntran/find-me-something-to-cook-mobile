@@ -1,4 +1,5 @@
 // theme.ts
+import { createContext, useContext, useState, ReactNode } from "react";
 
 export type Theme = {
     colors: {
@@ -21,6 +22,7 @@ export type Theme = {
     };
 };
 
+// Light mode
 export const lightTheme: Theme = {
     colors: {
         background: "#F6F3EE",
@@ -42,6 +44,7 @@ export const lightTheme: Theme = {
     },
 };
 
+// Dark mode
 export const darkTheme: Theme = {
     colors: {
         background: "#1E1B18",
@@ -61,4 +64,43 @@ export const darkTheme: Theme = {
         spinnerTrack: "#3A342E",
         spinnerHighlight: "#C08A5F",
     },
+};
+
+// Theme context and provider
+type ThemeContextType = {
+    theme: Theme;
+    isDark: boolean;
+    toggleTheme: () => void;
+};
+
+// Create context
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+// Theme provider component
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+    const [isDark, setIsDark] = useState(false);
+
+    // Function to toggle theme (switch)
+    const toggleTheme = () => setIsDark(prev => !prev);
+
+    // Provide theme context to children
+    return (
+        <ThemeContext.Provider
+            value={{
+                theme: isDark ? darkTheme : lightTheme,
+                isDark,
+                toggleTheme,
+            }
+            }
+        >
+            {children}
+        </ThemeContext.Provider>
+    );
+};
+
+// Custom hook to use the theme
+export const useTheme = () => {
+    const ctx = useContext(ThemeContext);
+    if (!ctx) throw new Error("useTheme must be used inside ThemeProvider");
+    return ctx;
 };
