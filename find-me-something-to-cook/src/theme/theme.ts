@@ -51,7 +51,7 @@ export const darkTheme: Theme = {
         primary: "#C08A5F",
         primaryLight: "#A06E4A",
 
-        textBlack: "#F6F3EE",   // becomes light text
+        textBlack: "#F6F3EE",
         textDark: "#C9C3BC",
         textMuted: "#A79F96",
 
