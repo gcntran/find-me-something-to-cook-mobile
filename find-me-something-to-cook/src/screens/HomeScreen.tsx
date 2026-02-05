@@ -48,30 +48,34 @@ const HomeScreen = () => {
     };
 
     // Refresh handler for random recipes
-    const refreshRandom = useCallback(() => {
+    const refreshRandom = useCallback(async () => { 
         setRefreshing(true);
-        setTimeout(() => {
-            const newRandom: Recipe[] = [
-                {
-                    id: Math.random(),
-                    title: "Random Recipe 1",
-                    image: "https://picsum.photos/300?1",
-                },
-                {
-                    id: Math.random(),
-                    title: "Random Recipe 2",
-                    image: "https://picsum.photos/300?2",
-                },
-                {
-                    id: Math.random(),
-                    title: "Random Recipe 3",
-                    image: "https://picsum.photos/300?3",
-                },
-            ];
-            setRandomRecipes(newRandom);
-            setRefreshing(false);
-        }, 800);
-    }, []);
+        try {
+            const results = [];
+        
+            // TheMealDB returns ONE random meal per request
+            for (let i = 0; i < 3; i++) {
+              const res = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
+              const data = await res.json();
+        
+              if (data.meals && data.meals[0]) {
+                const m = data.meals[0];
+                results.push({
+                  id: m.idMeal,
+                  title: m.strMeal,
+                  image: m.strMealThumb,
+                  saved: false,
+                });
+              }
+            }
+        
+            setRandomRecipes(results);
+          } catch (err) {
+            console.log("Random fetch error:", err);
+          }
+        
+          setRefreshing(false);
+        }, []);
 
     // Initial load of random recipes when open the app
     useEffect(() => {
