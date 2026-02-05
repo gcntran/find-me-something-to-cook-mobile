@@ -1,29 +1,50 @@
-import { View, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import { Text } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
+import { Card, Text, IconButton } from 'react-native-paper';
 import { Feather } from '@expo/vector-icons';
+import { useTheme } from '../theme/theme';
 import { RecipeCardProps } from '../types';
 
-
 export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCardProps) {
-    return (
-        <TouchableOpacity style={styles.card} onPress={onPress}>
-            <View style={styles.imageWrapper}>
-                <Image source={{ uri: recipe.image }} style={styles.image} />
+    const { theme } = useTheme();
 
-                <TouchableOpacity style={styles.heart} onPress={onToggleSave}>
-                    <Feather
-                        name="heart"
-                        size={20}
-                        color={isSaved ? "#C0392B" : "#FFFFFF"}
-                        style={{ opacity: isSaved ? 1 : 0.6 }}
-                    />
-                </TouchableOpacity>
+    return (
+        <Card
+            onPress={onPress}
+            style={[
+                styles.card,
+                { backgroundColor: theme.colors.header }
+            ]}
+            mode="elevated"
+        >
+            <View style={styles.imageWrapper}>
+                <Card.Cover
+                    source={{ uri: recipe.image }}
+                    style={styles.image}
+                />
+
+                <IconButton
+                    icon={() => (
+                        <Feather
+                            name="heart"
+                            size={18}
+                            color={isSaved ? theme.colors.primary : theme.colors.textBlack}
+                        />
+                    )}
+                    onPress={onToggleSave}
+                    style={styles.heart}
+                    containerColor="rgba(255,255,255,0.85)"
+                />
             </View>
 
-            <Text numberOfLines={2} style={styles.title}>
-                {recipe.title}
-            </Text>
-        </TouchableOpacity>
+            <Card.Content style={styles.content}>
+                <Text
+                    numberOfLines={2}
+                    style={[styles.title, { color: theme.colors.textBlack }]}
+                >
+                    {recipe.title}
+                </Text>
+            </Card.Content>
+        </Card>
     );
 }
 
@@ -31,27 +52,35 @@ const styles = StyleSheet.create({
     card: {
         width: 160,
         marginRight: 12,
+        borderRadius: 14,
+        overflow: 'hidden',
     },
+
     imageWrapper: {
-        width: "100%",
+        width: '100%',
         height: 120,
-        borderRadius: 12,
-        overflow: "hidden",
-        backgroundColor: "#ddd",
+        borderRadius: 14,
+        overflow: 'hidden',
     },
+
     image: {
-        width: "100%",
-        height: "100%",
+        height: '100%',
+        width: '100%',
     },
+
     heart: {
-        position: "absolute",
-        top: 8,
-        right: 8,
-        padding: 4,
+        position: 'absolute',
+        top: 6,
+        right: 6,
+        zIndex: 10,
     },
+
+    content: {
+        paddingTop: 8,
+    },
+
     title: {
-        marginTop: 6,
         fontSize: 14,
-        fontWeight: "600",
+        fontWeight: '600',
     },
 });
