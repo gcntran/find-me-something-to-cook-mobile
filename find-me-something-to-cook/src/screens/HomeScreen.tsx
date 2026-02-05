@@ -14,6 +14,17 @@ import { Recipe } from '../types';
 const HomeScreen = () => {
     const { theme } = useTheme();
 
+
+    // State variables for recipes
+    const [searchResults, setSearchResults] = useState<Recipe[]>([]);
+    const [randomRecipes, setRandomRecipes] = useState<Recipe[]>([]);
+    const [recentlyViewed, setRecentlyViewed] = useState<Recipe[]>([]);
+    const [refreshing, setRefreshing] = useState(false);
+
+    const handleSearch = (results: Recipe[]) => {
+        setSearchResults(results);
+    };
+
     return (
         <View
             style={{
