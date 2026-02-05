@@ -1,0 +1,1 @@
+import { SearchResultsSectionProps } from '../types';
