@@ -74,26 +74,50 @@ const HomeScreen = () => {
         }, 800);
     }, []);
 
+    // Add recently viewed clear handler
+    const clearHistory = () => setRecentlyViewed([]);
+
+
 
     return (
-        <View
+
+        <ScrollView
             style={{
                 flex: 1,
                 backgroundColor: theme.colors.background,
                 padding: 20,
             }}
+            refreshControl={
+                <RefreshControl refreshing={refreshing} onRefresh={refreshRandom} />
+            }
         >
 
             {/* Other components */}
             {/* Search Bar */}
-            <SearchBar />
+            <SearchBar onSearch={handleSearch} />
 
             {/* Search Results */}
+            <SearchResultsSection
+                results={searchResults}
+                onPressRecipe={handlePressRecipe}
+                onToggleSave={handleToggleSave}
+            />
 
             {/* Random Recipes */}
+            <RandomRecipesSection
+                randomRecipes={randomRecipes}
+                refreshing={refreshing}
+                onRefresh={refreshRandom}
+                onPressRecipe={handlePressRecipe}
+                onToggleSave={handleToggleSave}
+            />
             {/* Recently Viewed */}
-
-        </View>
+            <RecentlyViewedSection
+                history={recentlyViewed}
+                onPressRecipe={handlePressRecipe}
+                onClearHistory={clearHistory}
+            />
+            </ScrollView>
     );
 };
 
