@@ -21,9 +21,33 @@ const HomeScreen = () => {
     const [recentlyViewed, setRecentlyViewed] = useState<Recipe[]>([]);
     const [refreshing, setRefreshing] = useState(false);
 
+    // Search handler
     const handleSearch = (results: Recipe[]) => {
         setSearchResults(results);
     };
+
+    const handlePressRecipe = (recipe: Recipe) => {
+        setRecentlyViewed(prev => {
+            const filtered = prev.filter(r => r.id !== recipe.id);
+            return [{ ...recipe, viewedAt: Date.now() }, ...filtered].slice(0, 4);
+        });
+    };
+
+    // Toggle save handler (for the save to Notebook feature)
+    // The saved state should be synced across all sections
+    // i.e., if a recipe is saved in search results, it should also appear as saved in random recipes and recently viewed
+    const handleToggleSave = (recipe: Recipe) => {
+        setSearchResults(prev =>
+            prev.map(r => r.id === recipe.id ? { ...r, saved: !r.saved } : r)
+        );
+        setRandomRecipes(prev =>
+            prev.map(r => r.id === recipe.id ? { ...r, saved: !r.saved } : r)
+        );
+        setRecentlyViewed(prev =>
+            prev.map(r => r.id === recipe.id ? { ...r, saved: !r.saved } : r)
+        );
+    };
+
 
     return (
         <View
