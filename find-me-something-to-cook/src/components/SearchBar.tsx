@@ -16,7 +16,7 @@ const SearchBar = () => {
             <TextInput
                 value={query}
                 onChangeText={setQuery}
-                placeholder="Search..."
+                placeholder="Type ingredients..."
                 placeholderTextColor={theme.colors.textMuted}
                 style={[styles.input, { color: theme.colors.textBlack }]}
             />
