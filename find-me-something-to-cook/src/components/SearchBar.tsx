@@ -1,28 +1,47 @@
 import React, { useState } from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import { useTheme } from "../theme/theme";
+import { Recipe } from "../types";
 
-const SearchBar = () => {
+type SearchBarProps = {
+    onSearch: (results: Recipe[]) => void;
+};
+
+const SearchBar = ({ onSearch }: SearchBarProps) => {
     const { theme } = useTheme();
     const [query, setQuery] = useState("");
+    const handleSubmit = () => {
+        const fakeResults: Recipe[] = [
+            {
+                id: 1,
+                title: 'Sample Recipe',
+                image: 'https://picsum.photos/300',
+            },
+        ];
+
+        onSearch(fakeResults);
+    };
 
     return (
-        <View
-            style={[
-                styles.container,
-                { backgroundColor: theme.colors.header, borderColor: theme.colors.border }
-            ]}
-        >
+        <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
             <TextInput
                 value={query}
                 onChangeText={setQuery}
-                placeholder="Type ingredients..."
+                placeholder="Type ingredient..."
                 placeholderTextColor={theme.colors.textMuted}
-                style={[styles.input, { color: theme.colors.textBlack }]}
+                onSubmitEditing={handleSubmit}
+                style={[
+                    styles.input,
+                    {
+                        color: theme.colors.textBlack,
+                    },
+                ]}
             />
         </View>
     );
 };
+
+export default SearchBar;
 
 const styles = StyleSheet.create({
     container: {
@@ -38,4 +57,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SearchBar;
+

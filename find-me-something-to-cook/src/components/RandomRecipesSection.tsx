@@ -1,8 +1,8 @@
 import { FlatList, View, RefreshControl } from 'react-native';
 import { Text, Button } from 'react-native-paper';
 import { RecipeCard } from './RecipeCard';
-import { RecipeCardProps } from '../types';
 import { RandomRecipesSectionProps } from '../types';
+import { useTheme } from '../theme/theme';
 
 export function RandomRecipesSection({
     randomRecipes,
@@ -11,6 +11,8 @@ export function RandomRecipesSection({
     onPressRecipe,
     onToggleSave,
 }: RandomRecipesSectionProps) {
+
+    const { theme } = useTheme();
 
     return (
         <View style={{ marginBottom: 24 }}>
@@ -37,9 +39,11 @@ export function RandomRecipesSection({
             />
 
             <Button
-                mode="text"
+                mode="outlined"
+                compact
                 onPress={onRefresh}
-                style={{ marginTop: 8, alignSelf: "flex-start" }}
+                style={{ marginTop: 8, alignSelf: 'flex-start', borderRadius: 8 }}
+                textColor={theme.colors.primary}
             >
                 Refresh
             </Button>

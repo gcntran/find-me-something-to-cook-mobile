@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { View, ScrollView, RefreshControl } from 'react-native';
 import { useTheme } from "../theme/theme";
 import { lightTheme, darkTheme } from "../theme/theme";
@@ -8,7 +8,6 @@ import SearchBar from '../components/SearchBar';
 import { SearchResultsSection } from '../components/SearchResultsSection';
 import { RandomRecipesSection } from '../components/RandomRecipesSection';
 import { RecentlyViewedSection } from '../components/RecentlyViewedSection';
-
 import { Recipe } from '../types';
 
 const HomeScreen = () => {
@@ -74,10 +73,13 @@ const HomeScreen = () => {
         }, 800);
     }, []);
 
+    // Initial load of random recipes when open the app
+    useEffect(() => {
+        refreshRandom();
+    }, []);
+    
     // Add recently viewed clear handler
     const clearHistory = () => setRecentlyViewed([]);
-
-
 
     return (
 
