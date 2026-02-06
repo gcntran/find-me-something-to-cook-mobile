@@ -40,7 +40,7 @@ Components:
   View (DONE)
   Text (DONE)
   Image (DONE)
-  TextInput
+  TextInput (DONE)
   ScrollView (DONE)
   StyleSheet (DONE)
   Button (DONE)
