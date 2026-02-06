@@ -24,9 +24,10 @@ Step 2:
   8. A bottom tab to navigate between Home and Favorites/Notebook (for multi screen assignment)
 - User flows:
   - Open the app -> Home screen -> random recipes appear -> users can select any recipe -> View recipe -> Add to Notebook (if users like the recipes)
-  - Open the app -> Home screen -> random recipes appear -> users search ingredients for recipes 
-  True -> View recipe -> Add to Notebook (if users like the recipes)
-  False -> loading -> no recipe found -> search again
+    - Viewed recipe -> recently viewed -> clear
+  - Open the app -> Home screen -> random recipes appear -> users search ingredients for recipes -> press enter
+    - True -> View recipe -> Add to Notebook (if users like the recipes)
+    - False -> loading -> no recipe found -> search again (Haven't done this)
 - Wireframe developed with Figma
 ----------------------------------------------------------
 For next assignment (multi-page screen)
