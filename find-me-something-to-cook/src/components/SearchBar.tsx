@@ -22,7 +22,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
         <View
             style={[
                 styles.container,
-                { backgroundColor: theme.colors.header, borderColor: theme.colors.border },
+                { backgroundColor: theme.colors.header },
             ]}
         >
 
