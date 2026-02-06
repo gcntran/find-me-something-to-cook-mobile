@@ -24,7 +24,7 @@ export function RandomRecipesSection({
                     color: theme.colors.text,
                 }}
             >
-                Random Recipes
+                Suggested Recipes
             </Text>
 
             {/* Horizontal scrolling for random recipes */}
