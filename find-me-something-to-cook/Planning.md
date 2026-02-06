@@ -14,7 +14,7 @@ Step 2:
 - Single screen layout:
   1. Header -> StatusBar
   2. Search bar -> TextInput, SearchBar.tsx
-  3. Place for the search results (3) -> ScrollView.tsx, RecipeCard.tsx
+  3. Place for the search results -> ScrollView.tsx, RecipeCard.tsx
   4. Random recipes -> ScrollView, RecipeCard.tsx
   5. A tab for favorite recipes (feature will be developed on next assignment)
   6. Dark mode switch -> Switch, ThemeSwitch.tsx
@@ -37,14 +37,14 @@ Git Version Control:
 - Upload to GitHub
 
 Components:
-  View
-  Text
-  Image
+  View (DONE)
+  Text (DONE)
+  Image (DONE)
   TextInput
-  ScrollView
-  StyleSheet
-  Button
-  Switch
+  ScrollView (DONE)
+  StyleSheet (DONE)
+  Button (DONE)
+  Switch (DONE)
 
 Third-Party Modules:
 Install and use at least one third-party module from either:

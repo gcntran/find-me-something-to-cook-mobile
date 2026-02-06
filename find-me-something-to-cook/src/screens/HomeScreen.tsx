@@ -1,18 +1,15 @@
 import { useState, useEffect, useCallback } from 'react';
-import { View, ScrollView, RefreshControl } from 'react-native';
+import { ScrollView, RefreshControl } from 'react-native';
 import { useTheme } from "../theme/theme";
-import { lightTheme, darkTheme } from "../theme/theme";
-import { ThemeSwitch } from '../components/ThemeSwitch';
 import SearchBar from '../components/SearchBar';
-
 import { SearchResultsSection } from '../components/SearchResultsSection';
 import { RandomRecipesSection } from '../components/RandomRecipesSection';
 import { RecentlyViewedSection } from '../components/RecentlyViewedSection';
 import { Recipe } from '../types';
 
+// HomeScreen is the main screen of the app, I named it Search instead of Home based on the main purpose of the app, which is to search for recipes
 const HomeScreen = () => {
     const { theme } = useTheme();
-
 
     // State variables for recipes
     const [searchResults, setSearchResults] = useState<Recipe[]>([]);
@@ -27,6 +24,8 @@ const HomeScreen = () => {
             return;
         }
 
+        // Fetch data from TheMealDB API
+        // I asked AI for this
         try {
             const res = await fetch(
                 `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
@@ -51,7 +50,7 @@ const HomeScreen = () => {
         }
     };
 
-
+    // Press handler for recipes (both search results and random recipes)
     const handlePressRecipe = (recipe: Recipe) => {
         setRecentlyViewed(prev => {
             const filtered = prev.filter(r => r.id !== recipe.id);
@@ -96,7 +95,10 @@ const HomeScreen = () => {
                 }
             }
 
-            setRandomRecipes(results);
+            // Remove duplicates
+            const unique = Array.from(new Map(results.map(r => [r.id, r])).values());
+            setRandomRecipes(unique);
+
         } catch (err) {
             console.log("Random fetch error:", err);
         }
