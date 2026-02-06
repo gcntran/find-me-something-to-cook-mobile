@@ -1,4 +1,4 @@
-// src/types.ts
+// Type definitions for recipe-related components and props
 
 export type Recipe = {
     id: string | number;

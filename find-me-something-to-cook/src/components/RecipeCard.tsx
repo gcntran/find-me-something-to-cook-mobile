@@ -9,7 +9,6 @@ export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCar
     const { theme } = useTheme();
 
     return (
-
         // Card component from react-native-paper to display recipe information
         <Card
             onPress={onPress}

@@ -5,6 +5,7 @@ Step 1:
 - Purpose: To create a user-friendly application that allows users to browse, search, and view recipes.
 - Target Audience: Home cooks, food enthusiasts, and anyone interested in cooking.
 - Name: Find Me Something to Cook 
+- Wireframe developed: Figma
 ----------------------------------------------------------
 Step 2: 
 - Platform: Android with React Native, using TheMealDB API
@@ -29,7 +30,6 @@ Step 2:
   - Open the app -> Home screen -> random recipes appear -> users search ingredients for recipes -> press enter
     - True -> View recipe -> Add to Notebook (if users like the recipes)
     - False -> loading -> no recipe found -> search again (Haven't done this)
-- Wireframe developed with Figma
 ----------------------------------------------------------
 For next assignment (multi-page screen)
   - Add a screen for viewing the recipe detail, another component -> RecipeScreen
