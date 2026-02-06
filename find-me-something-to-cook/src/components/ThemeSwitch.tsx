@@ -6,6 +6,7 @@ import { Switch } from 'react-native-paper';
 export const ThemeSwitch = () => {
     const { theme, isDark, toggleTheme } = useTheme();
 
+    // A simple switch to toggle between light and dark themes
     return (
         <TouchableOpacity onPress={toggleTheme}>
             <Switch

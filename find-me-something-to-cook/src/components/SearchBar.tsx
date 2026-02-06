@@ -1,13 +1,14 @@
 import { View, TextInput, StyleSheet } from 'react-native';
 import { useState } from 'react';
-import { IconButton } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTheme } from '../theme/theme';
 
+// Props for the SearchBar component, which includes a callback function to handle search queries
 type SearchBarProps = {
     onSearch: (query: string) => void;
 };
 
+// SearchBar function
 const SearchBar = ({ onSearch }: SearchBarProps) => {
     const { theme } = useTheme();
     const [query, setQuery] = useState('');
@@ -16,6 +17,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
         onSearch(query);
     };
 
+    // Return with a View that contains an icon and a TextInput for the search query
     return (
         <View
             style={[
@@ -23,6 +25,8 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
                 { backgroundColor: theme.colors.header, borderColor: theme.colors.border },
             ]}
         >
+
+            {/* I'm using Material Icons for Android */}
             <MaterialCommunityIcons
                 name="magnify"
                 size={20}
@@ -30,6 +34,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
                 style={styles.icon}
             />
 
+            {/* Here is the TextInput for the assignment requirements */}
             <TextInput
                 value={query}
                 onChangeText={setQuery}
@@ -44,6 +49,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
 
 export default SearchBar;
 
+// Styling for the SearchBar
 const styles = StyleSheet.create({
     container: {
         width: '100%',

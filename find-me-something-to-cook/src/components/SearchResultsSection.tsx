@@ -11,6 +11,7 @@ export function SearchResultsSection({
 }: SearchResultsSectionProps) {
   const { theme } = useTheme();
 
+  // If there are no results, we can return null to avoid rendering an empty section
   if (!results || results.length === 0) return null;
 
   return (
@@ -19,12 +20,13 @@ export function SearchResultsSection({
         variant="titleMedium"
         style={{
           marginBottom: 8,
-          color: theme.colors.text,   // ← dark mode now works
+          color: theme.colors.text,
         }}
       >
         Results
       </Text>
 
+      {/* Horizontal scrolling for search results */}
       <FlatList
         data={results}
         horizontal
