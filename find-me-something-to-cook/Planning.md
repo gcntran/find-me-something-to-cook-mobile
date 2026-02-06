@@ -17,7 +17,7 @@ Step 2:
   1. Header -> StatusBar, screen titles
   2. Search bar -> TextInput, SearchBar.tsx
   3. Place for the search results -> ScrollView, SearchResultsSection.tsx
-  4. Random recipes -> ScrollView, RandomRecipesSection.tsx
+  4. Random recipes - Suggested Recipes -> ScrollView, RandomRecipesSection.tsx
   5. Recently viewed for history viewed recipes -> Grid of 4 recipes with a clear button, RecentlyViewedSection.tsx
   6. A tab for favorite recipes -> Notebook (feature will be developed on next assignment)
   7. Dark mode switch -> Switch, ThemeSwitch.tsx
@@ -33,6 +33,7 @@ Step 2:
 For next assignment (multi-page screen)
   - Add a screen for viewing the recipe detail, another component?
   - Users navigate to the Notebook tab -> View recipe/Delete recipe from Notebook
+  - Add MongoDB for database to store favorite recipes in Notebook
 
 Part B: Development
 
