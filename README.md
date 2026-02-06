@@ -61,9 +61,9 @@ React Navigation uses:
 }
 
 ## API integration
-Search Endpoint: https://www.themealdb.com/api/json/v1/1/search.php?s={query}
-Random Recipe Endpoint: https://www.themealdb.com/api/json/v1/1/random.php
-Recipe Details Endpoint: https://www.themealdb.com/api/json/v1/1/lookup.php?i={id}
+- Search Endpoint: https://www.themealdb.com/api/json/v1/1/search.php?s={query}
+- Random Recipe Endpoint: https://www.themealdb.com/api/json/v1/1/random.php
+- Recipe Details Endpoint: https://www.themealdb.com/api/json/v1/1/lookup.php?i={id}
 
 ## Third-Party Modules Used
 **React Native Paper**
