@@ -94,9 +94,9 @@ React Navigation uses:
     ```bash
     npm install
     ```
-4. Run the app:
+4. Run the app via expo:
     ```bash
-    npm start
+    npx expo start
     ```
 
 ## Technologies Used
