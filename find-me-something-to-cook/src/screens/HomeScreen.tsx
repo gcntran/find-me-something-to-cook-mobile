@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { View, ScrollView, RefreshControl } from 'react-native';
+import { ScrollView, RefreshControl } from 'react-native';
 import { useTheme } from "../theme/theme";
 import SearchBar from '../components/SearchBar';
 import { SearchResultsSection } from '../components/SearchResultsSection';

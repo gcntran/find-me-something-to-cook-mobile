@@ -1,15 +1,16 @@
 import { StyleSheet, View } from 'react-native';
 import { Card, Text, IconButton } from 'react-native-paper';
-import { Feather } from '@expo/vector-icons';
 import { useTheme } from '../theme/theme';
 import { RecipeCardProps } from '../types';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-
+// Card component for recipes
 export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCardProps) {
     const { theme } = useTheme();
 
     return (
+
+        // Card component from react-native-paper to display recipe information
         <Card
             onPress={onPress}
             style={[
@@ -24,6 +25,7 @@ export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCar
                     style={styles.image}
                 />
 
+                {/* Heart icon for saving the recipe */}
                 <IconButton
                     icon={() => (
                         <MaterialCommunityIcons
@@ -38,6 +40,7 @@ export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCar
                 />
             </View>
 
+            {/* Recipe title */}
             <Card.Content style={styles.content}>
                 <Text
                     numberOfLines={2}
@@ -50,6 +53,7 @@ export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCar
     );
 }
 
+// Styling
 const styles = StyleSheet.create({
     card: {
         width: 300,

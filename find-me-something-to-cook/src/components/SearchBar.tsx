@@ -8,7 +8,7 @@ type SearchBarProps = {
     onSearch: (query: string) => void;
 };
 
-// SearchBar function
+// Search function
 const SearchBar = ({ onSearch }: SearchBarProps) => {
     const { theme } = useTheme();
     const [query, setQuery] = useState('');

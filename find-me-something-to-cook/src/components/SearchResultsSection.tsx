@@ -4,6 +4,7 @@ import { Text } from 'react-native-paper';
 import { RecipeCard } from './RecipeCard';
 import { useTheme } from '../theme/theme';
 
+// Search result component
 export function SearchResultsSection({
   results,
   onPressRecipe,

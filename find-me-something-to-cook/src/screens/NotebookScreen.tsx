@@ -1,5 +1,6 @@
 import { View, Text } from 'react-native';
 
+// Notebook screen, this screen is for the next assignment
 export default function Notebook() {
     return (
         <View>

@@ -4,6 +4,7 @@ import { RecipeCard } from './RecipeCard';
 import { RandomRecipesSectionProps } from '../types';
 import { useTheme } from '../theme/theme';
 
+// Random Recipes function
 export function RandomRecipesSection({
     randomRecipes,
     refreshing,
@@ -26,6 +27,7 @@ export function RandomRecipesSection({
                 Random Recipes
             </Text>
 
+            {/* Horizontal scrolling for random recipes */}
             <FlatList
                 data={randomRecipes}
                 horizontal
@@ -44,6 +46,7 @@ export function RandomRecipesSection({
                 )}
             />
 
+            {/* Refresh button */}
             <Button
                 mode="contained-tonal"
                 compact

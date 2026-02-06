@@ -4,6 +4,7 @@ import { Text, IconButton } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTheme } from '../theme/theme';
 
+// Recently Viewed component, after clicking on any recipe, the history will be appeared here
 export function RecentlyViewedSection({
     history,
     onPressRecipe,
@@ -11,7 +12,8 @@ export function RecentlyViewedSection({
 }: RecentlyViewedSectionProps) {
 
     const { theme } = useTheme();
-
+    
+    // If there is no history, we can return null to avoid rendering an empty section
     if (!history || history.length === 0) return null;
 
     return (
@@ -24,10 +26,14 @@ export function RecentlyViewedSection({
                     Recently Viewed
                 </Text>
 
+            {/* 
+            Add a clear button to clear history viewed. 
+            In the future, maybe I will add a toast to warn users if they really want to clear all 
+            */}
                 <TouchableOpacity onPress={onClearHistory}>
                     <Text
                         style={{
-                            fontSize: 12,
+                            fontSize: 12, // The size has to be small for user experience design
                             opacity: 0.7,
                             color: theme.colors.textMuted,
                         }}
@@ -49,6 +55,7 @@ export function RecentlyViewedSection({
                     >
                         <Image source={{ uri: item.image }} style={styles.smallImage} />
 
+                        {/* Heart icon for saving the recipe */}
                         <IconButton
                             icon={() => (
                                 <MaterialCommunityIcons
@@ -69,6 +76,7 @@ export function RecentlyViewedSection({
     );
 }
 
+// Styling
 const styles = StyleSheet.create({
     headerRow: {
         flexDirection: 'row',
