@@ -24,7 +24,7 @@ export function SearchResultsSection({
           color: theme.colors.text,
         }}
       >
-        Results
+        Recipes Found
       </Text>
 
       {/* Horizontal scrolling for search results */}
