@@ -22,6 +22,7 @@ Step 2:
   6. A tab for favorite recipes -> Notebook (feature will be developed on next assignment)
   7. Dark mode switch -> Switch, ThemeSwitch.tsx
   8. A bottom tab to navigate between Home and Favorites/Notebook (for multi screen assignment)
+----------------------------------------------------------
 - User flows:
   - Open the app -> Home screen -> random recipes appear -> users can select any recipe -> View recipe -> Add to Notebook (if users like the recipes)
     - Viewed recipe -> recently viewed -> clear
@@ -31,7 +32,7 @@ Step 2:
 - Wireframe developed with Figma
 ----------------------------------------------------------
 For next assignment (multi-page screen)
-  - Add a screen for viewing the recipe detail, another component?
+  - Add a screen for viewing the recipe detail, another component -> RecipeScreen
   - Users navigate to the Notebook tab -> View recipe/Delete recipe from Notebook
   - Add a profile screen for setting, backup/restore and dietary information
   - Add MongoDB for database to store favorite recipes in Notebook
