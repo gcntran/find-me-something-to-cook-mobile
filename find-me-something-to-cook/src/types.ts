@@ -4,8 +4,8 @@ export type Recipe = {
     id: string | number;
     title: string;
     image: string;
-    saved?: boolean;        // whether the user saved it to Notebook
-    viewedAt?: number;      // timestamp for recently viewed sorting
+    saved?: boolean;    // whether the user saved it to Notebook
+    viewedAt?: number;  // timestamp for recently viewed sorting
   };
   
   // Props for a single recipe card
