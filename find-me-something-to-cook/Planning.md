@@ -33,6 +33,7 @@ Step 2:
 For next assignment (multi-page screen)
   - Add a screen for viewing the recipe detail, another component?
   - Users navigate to the Notebook tab -> View recipe/Delete recipe from Notebook
+  - Add a profile screen for setting, backup/restore and dietary information
   - Add MongoDB for database to store favorite recipes in Notebook
 
 Part B: Development
@@ -54,9 +55,9 @@ Components checklist:
   Button (refresh button for the random recipes) (DONE)
   Switch (theme modes toggle) (DONE)
 
-Third-Party Modules:
-- Install and use at least one third-party module from either:
-  - react-native-paper (DONE )
+Third-Party Modules: (DONE)
+  - React Native Paper
+  - React Navigation for bottom tab
 
 Code Quality: (DONE)
 - let and const keywords (DONE)
