@@ -29,12 +29,12 @@ export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCar
                         <MaterialCommunityIcons
                             name={isSaved ? "heart" : "heart-outline"}
                             size={18}
-                            color={isSaved ? theme.colors.primary : theme.colors.textBlack}
+                            color={isSaved ? theme.colors.icon : theme.colors.textBlack}
                         />
                     )}
                     onPress={onToggleSave}
                     style={styles.heart}
-                    containerColor="rgba(255,255,255,0.85)"
+                    containerColor={theme.colors.background}
                 />
             </View>
 
@@ -52,7 +52,7 @@ export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCar
 
 const styles = StyleSheet.create({
     card: {
-        width: 200,
+        width: 300,
         marginRight: 12,
         borderRadius: 10,
         overflow: 'hidden',
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
 
     imageWrapper: {
         width: '100%',
-        height: 120,
+        height: 300,
         borderRadius: 10,
         overflow: 'hidden',
     },
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: '600',
     },
 });

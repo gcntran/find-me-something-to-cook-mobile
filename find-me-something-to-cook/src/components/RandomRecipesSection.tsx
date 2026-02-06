@@ -16,7 +16,13 @@ export function RandomRecipesSection({
 
     return (
         <View style={{ marginBottom: 24 }}>
-            <Text variant="titleMedium" style={{ marginBottom: 8 }}>
+            <Text
+                variant="titleMedium"
+                style={{
+                    marginBottom: 8,
+                    color: theme.colors.text,
+                }}
+            >
                 Random Recipes
             </Text>
 
@@ -42,12 +48,13 @@ export function RandomRecipesSection({
                 mode="contained-tonal"
                 compact
                 onPress={onRefresh}
-                style={{ 
+                style={{
                     width: 120,
-                    marginTop: 12, 
-                    alignSelf: 'center', 
+                    margin: 14,
+                    alignSelf: 'center',
                     backgroundColor: theme.colors.primary,
-                    borderRadius: 20 }}
+                    borderRadius: 20,
+                }}
                 textColor={theme.colors.background}
             >
                 Refresh

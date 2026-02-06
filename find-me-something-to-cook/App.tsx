@@ -9,7 +9,7 @@ import NotebookScreen from './src/screens/NotebookScreen';
 import { ThemeSwitch } from './src/components/ThemeSwitch';
 import { ThemeProvider } from './src/theme/theme';
 import { navigationLightTheme, navigationDarkTheme } from './src/theme/theme';
-import { Feather } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,35 +21,55 @@ export default function App() {
 
   return (
     <ThemeProvider>
-    <PaperProvider theme={paperTheme}>
-      <NavigationContainer theme={navTheme}>
-        <Tab.Navigator id="main.tabs">
-          <Tab.Screen
-            name="Search"
-            component={HomeScreen}
-            options={{
-              headerTitle: 'Search',
-              tabBarIcon: ({ color, size }) => (
-                <Feather name="search" color={color} size={size} />
-              ),
-              headerRight: () => (
-                <View style={{ marginRight: 16 }}>
-                  <ThemeSwitch />
-                </View>
-              ),
+      <PaperProvider theme={paperTheme}>
+        <NavigationContainer theme={navTheme}>
+          <Tab.Navigator
+            id="main.tabs"
+            screenOptions={{
+              tabBarActiveTintColor: navTheme.colors.primary,
+              tabBarInactiveTintColor: navTheme.colors.text,
+              tabBarStyle: {
+                backgroundColor: navTheme.colors.header,
+                borderTopColor: navTheme.colors.header,
+              },
+              tabBarLabelStyle: {
+                fontSize: 14,
+                fontWeight: '600',
+              },
             }}
-          />
-          <Tab.Screen name="Notebook" 
-          component={NotebookScreen}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Feather name="book" color={color} size={size} />
-              ),
-          }}
-          />
-        </Tab.Navigator>
-      </NavigationContainer>
-    </PaperProvider>
+          >
+            <Tab.Screen
+              name="Search"
+              component={HomeScreen}
+              options={{
+                headerTitle: 'Search',
+                tabBarIcon: ({ color, size }) => (
+                  <MaterialCommunityIcons
+                    name="magnify"
+                    color={color}
+                    size={24} />
+                ),
+                headerRight: () => (
+                  <View style={{ marginRight: 16 }}>
+                    <ThemeSwitch />
+                  </View>
+                ),
+              }}
+            />
+            <Tab.Screen name="Notebook"
+              component={NotebookScreen}
+              options={{
+                tabBarIcon: ({ color, size }) => (
+                  <MaterialCommunityIcons
+                    name="book"
+                    color={color}
+                    size={24} />
+                ),
+              }}
+            />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
     </ThemeProvider>
   );
 }
