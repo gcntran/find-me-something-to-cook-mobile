@@ -113,7 +113,6 @@ const HomeScreen = () => {
     const clearHistory = () => setRecentlyViewed([]);
 
     return (
-
         <ScrollView
             style={{
                 flex: 1,
