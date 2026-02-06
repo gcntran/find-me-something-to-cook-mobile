@@ -34,7 +34,11 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
                 style={styles.icon}
             />
 
-            {/* Here is the TextInput for the assignment requirements */}
+            {/* 
+            We are using TextInput to create a search bar where users can type their ingredient queries. 
+            The onChangeText prop is used to update the query state as the user types, 
+            and the onSubmitEditing prop is used to trigger the search function when the user submits their query. 
+            */}
             <TextInput
                 value={query}
                 onChangeText={setQuery}
