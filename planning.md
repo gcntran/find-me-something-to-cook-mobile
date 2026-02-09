@@ -31,7 +31,7 @@ Step 2:
     - True -> View recipe -> Add to Notebook (if users like the recipes)
     - False -> loading -> no recipe found -> search again (Haven't done this)
 ----------------------------------------------------------
-For next assignment (multi-page screen)
+For next assignment (multi screen)
   - Add a screen for viewing the recipe detail, another component -> RecipeScreen
   - Users navigate to the Notebook tab -> View recipe/Delete recipe from Notebook
   - Add a profile screen for setting, backup/restore and dietary information
