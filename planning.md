@@ -1,11 +1,12 @@
 Part A: Ideation & Planning
 ----------------------------------------------------------
 Step 1:
-- Theme: Recipe Viewer Application
+- Theme: Recipe Finder Application.
 - Purpose: To create a user-friendly application that allows users to browse, search, and view recipes.
+- Platform: Android.
 - Target Audience: Home cooks, food enthusiasts, and anyone interested in cooking.
-- Name: Find Me Something to Cook 
-- Wireframe developed: Figma
+- Name: Find Me Something to Cook.
+- Wireframe developed: Figma.
 ----------------------------------------------------------
 Step 2: 
 - Platform: Android with React Native, using TheMealDB API
