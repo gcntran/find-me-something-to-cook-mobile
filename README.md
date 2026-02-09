@@ -8,7 +8,7 @@
 - **Recipe Details**: View step-by-step instructions, preparation time, and nutritional information.
 - **Random Recipes**: Load random recipes for suggested recipes.
 - **Recently Viewed**: Store history recipes that you already viewed.
-- **Notebook**: Save your favorite recipes for quick access.
+- **Notebook**: Save your favourite recipes for quick access.
 - **User Profiles**: Customize preferences and dietary restrictions.
 - **Light/Dark mode**: Can switch between dark and light mode.
 
@@ -34,7 +34,7 @@
 - isDark (boolean)
 - toggleTheme() (switches mode)
 **Theme Tokens**
-Each theme defines:
+**Each theme defines:**
 - background
 - header
 - primary
@@ -42,11 +42,11 @@ Each theme defines:
 - textDark
 - textMuted
 - icon
-React Native Paper uses:
+**React Native Paper uses:**
 - onSurface → text color
 - primary → accent color
 - background → screen background
-React Navigation uses:
+**React Navigation uses:**
 - colors.text
 - colors.background
 - colors.primary
