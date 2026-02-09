@@ -33,24 +33,24 @@
 - theme (current theme object)
 - isDark (boolean)
 - toggleTheme() (switches mode)
-**Theme Tokens**
-**Each theme defines:**
-- background
-- header
-- primary
-- text
-- textDark
-- textMuted
-- icon
-**React Native Paper uses:**
-- onSurface → text color
-- primary → accent color
-- background → screen background
-**React Navigation uses:**
-- colors.text
-- colors.background
-- colors.primary
-- colors.card (header)
+## Theme Tokens**
+- Each theme defines:
+  - background
+  - header
+  - primary
+  - text
+  - textDark
+  - textMuted
+  - icon
+- React Native Paper uses:
+  - onSurface → text color
+  - primary → accent color
+  - background → screen background
+- React Navigation uses:
+  - colors.text
+  - colors.background
+  - colors.primary
+  - colors.card (header)
 
 ## Data Mapping (type.ts)
 {
