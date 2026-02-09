@@ -33,7 +33,7 @@
 - theme (current theme object)
 - isDark (boolean)
 - toggleTheme() (switches mode)
-## Theme Tokens**
+## Theme Tokens
 - Each theme defines:
   - background
   - header
@@ -75,8 +75,8 @@
 2. User searches → results appear instantly.
 3. User taps a recipe → navigates to RecipeScreen.
 4. RecipeScreen fetches full details by ID.
-5. Viewed recipe is added to Recently Viewed.
-6. User can save/unsave recipes anywhere.
+5. The viewed recipe is added to Recently Viewed.
+6. Users can save/unsave recipes anywhere.
 7. Notebook tab shows saved recipes.
 8. ThemeSwitch toggles light/dark mode globally.
 9. Profile tab shows settings and dietary information.
@@ -94,7 +94,7 @@
     ```bash
     npm install
     ```
-4. Run the app via expo:
+4. Run the app via Expo:
     ```bash
     npx expo start
     ```
@@ -102,7 +102,7 @@
 ## Technologies Used
 - **Frontend**: React Native
 - **Backend**: Node.js, Express.js
-- **Database**: MongoDB (in the future development)
+- **Database**: MongoDB (for future development)
 - **API Integration**: TheMealDB API for recipes
 
 ## License
