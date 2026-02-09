@@ -47,14 +47,14 @@ Git Version Control:
 - Upload to GitHub
 
 Components checklist:
-  View (DONE)
-  Text (DONE)
-  Image (the api images) (DONE)
-  TextInput (for search bar) (DONE)
-  ScrollView (scrolling the results and random recipes from api) (DONE)
-  StyleSheet (DONE)
-  Button (refresh button for the random recipes) (DONE)
-  Switch (theme modes toggle) (DONE)
+- View (DONE)
+- Text (DONE)
+- Image (the api images) (DONE)
+- TextInput (for search bar) (DONE)
+- ScrollView (scrolling the results and random recipes from api) (DONE)
+- StyleSheet (DONE)
+- Button (refresh button for the random recipes) (DONE)
+- Switch (theme modes toggle) (DONE)
 
 Third-Party Modules: (DONE)
   - React Native Paper
