@@ -5,4 +5,4 @@ Secondly, it's uneasy to make the app look exactly like the wireframe. I did the
 
 The ScrollView is very useful for any app; I applied using it and enjoyed it. Using theme for the app is also convenient since I could change any color for some component and it would be synced without editing each of them.
 
-Of course, I asked AI to help me a lot with this assignment. I used Copilot installed in VS Code, and it helped me to explain which part I couldn't understand. I also kept all the logs inside the Typescript files. If I have more time, I could do more with the UX & UI of the app. For now, I will leave them for the next assignment, which I will build a multi page application, I can edit and add more stuff I mentioned above.
+Of course, I asked AI to help me a lot with this assignment. I used Copilot installed in VS Code, and it helped me to explain which part I couldn't understand. I also kept all the logs inside the Typescript files. If I have more time, I could do more with the UX & UI of the app. For now, I will leave them for the next assignment, which I will build a multi screen application, I can edit and add more stuff I mentioned above.
