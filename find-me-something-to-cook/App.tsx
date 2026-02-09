@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Provider as PaperProvider, MD3DarkTheme, MD3LightTheme } from 'react-native-paper';
 
+import { useTheme } from "./src/theme/theme";
+
 import HomeScreen from './src/screens/HomeScreen';
 import NotebookScreen from './src/screens/NotebookScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
@@ -14,15 +16,15 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
-export default function App() {
-  const [isDark, setIsDark] = useState(false);
+function MainContent() {
+
+  const { theme, isDark, toggleTheme } = useTheme();
 
   const paperTheme = isDark ? MD3DarkTheme : MD3LightTheme;
   const navTheme = isDark ? navigationDarkTheme : navigationLightTheme;
 
   return (
-    <ThemeProvider>
-      <PaperProvider theme={paperTheme}>
+    <PaperProvider theme={paperTheme}>
         <NavigationContainer theme={navTheme}>
           <Tab.Navigator
             id="main.tabs"
@@ -82,6 +84,13 @@ export default function App() {
           </Tab.Navigator>
         </NavigationContainer>
       </PaperProvider>
+  )
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <MainContent />
     </ThemeProvider>
   );
 }
