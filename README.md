@@ -13,20 +13,20 @@
 - **Light/Dark mode**: Can switch between dark and light mode.
 
 ## App Layout
-**Screens**
-- HomeScreen: Search, random recipes, recently viewed.
-- NotebookScreen: Saved recipes.
-- RecipeScreen: Full recipe details fetched by ID.
-- ProfileScreen: For settings, backup/restore and dietary information (in future development).
-**Components**
-- SearchBar: Handles user input and triggers API search.
-- RecipeCard: Displays image, title, and save button.
-- SearchResultsSection: Shows search results.
-- RandomRecipesSection: Shows random recipes with refresh.
-- RecentlyViewedSection: Shows last viewed items.
-- ThemeSwitch: Toggles light/dark mode.
-**Navigation**
-- Bottom Tab Navigator for Home + Notebook.
+- Screens
+  - HomeScreen: Search, random recipes, recently viewed.
+  - NotebookScreen: Saved recipes.
+  - RecipeScreen: Full recipe details fetched by ID.
+  - ProfileScreen: For settings, backup/restore and dietary information (in future development).
+- Components
+  - SearchBar: Handles user input and triggers API search.
+  - RecipeCard: Displays image, title, and save button.
+  - SearchResultsSection: Shows search results.
+  - RandomRecipesSection: Shows random recipes with refresh.
+  - RecentlyViewedSection: Shows last viewed items.
+  - ThemeSwitch: Toggles light/dark mode.
+- Navigation
+  - Bottom Tab Navigator for Home + Notebook.
 
 ## Theme
 **Custom Theme Provider**
