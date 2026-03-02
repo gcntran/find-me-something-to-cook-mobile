@@ -1,9 +1,10 @@
+import { useRouter } from 'expo-router';
 import NotebookScreen from '../../src/screens/NotebookScreen';
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useSavedRecipes } from '../../src/context/SavedRecipesContext';
 
 export default function NotebookTab() {
   const router = useRouter();
-  const { savedRecipes } = useLocalSearchParams();
+  const { savedRecipes } = useSavedRecipes();
 
   return (
     <NotebookScreen

@@ -1,17 +1,14 @@
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { useTheme } from '../theme/theme';
 import { Recipe } from '../types';
-import RecipeCard from '../components/RecipeCard';
+import { RecipeCard } from '../components/RecipeCard';
 
 type NotebookProps = {
     savedRecipes: Recipe[];
     onPressRecipe: (recipe: Recipe) => void;
 };
 
-export default function NotebookScreen({
-    savedRecipes = [],
-    onPressRecipe = () => { }, }:
-    NotebookProps) {
+export default function NotebookScreen({ savedRecipes, onPressRecipe }: NotebookProps) {
     const { theme } = useTheme();
 
     return (
@@ -33,8 +30,9 @@ export default function NotebookScreen({
                 <RecipeCard
                     key={recipe.id}
                     recipe={recipe}
+                    isSaved={true}
                     onPress={() => onPressRecipe(recipe)}
-                    onToggleSave={() => { }}
+                    onToggleSave={() => {}}
                 />
             ))}
         </ScrollView>
