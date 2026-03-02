@@ -71,11 +71,18 @@ Styling: (DONE)
 - Apply styles to create a visually appealing layout.
 - MaterialCommunityIcons
 
+----------------------------------------------------------------------
+
 New plan - for multiple pages:
+  - Add a screen for viewing the recipe detail, another component -> RecipeScreen
+  - Users navigate to the Notebook tab -> View recipe/Delete recipe from Notebook
+  - Add a profile screen for setting, backup/restore and dietary information
+  - Add database to store favorite recipes in Notebook
+
 - Navigation:
-  - Ensure that your app uses Expo Router to support navigation.
+  Ensure that your app uses Expo Router to support navigation.
   - Router - Expo Documentation
-  - All of the following Expo Router features must be used:
+  All of the following Expo Router features must be used:
   - Tabs - Expo Documentation (minimum two tabs)
   - Stack - Expo Documentation (minimum six unique screens)
   - Modals - Expo Documentation (minimum one modal screen)
