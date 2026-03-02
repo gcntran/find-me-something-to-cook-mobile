@@ -1,35 +1,39 @@
 import { Tabs } from 'expo-router';
-import React from 'react';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { SavedRecipesProvider } from '../../src/context/SavedRecipesContext';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function TabsLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
+    <SavedRecipesProvider>
+      <Tabs>
+        <Tabs.Screen
+          name="index"
+          options={{
+            title: 'Search',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="magnify" size={24} color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="notebook"
+          options={{
+            title: 'Notebook',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="book" size={24} color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="profile"
+          options={{
+            title: 'Profile',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="account" size={24} color={color} />
+            ),
+          }}
+        />
+      </Tabs>
+    </SavedRecipesProvider>
   );
 }
