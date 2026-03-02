@@ -4,8 +4,9 @@ import { useTheme } from '../theme/theme';
 import { RecipeCardProps } from '../types';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+
 // Card component for recipes
-export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCardProps) {
+export function RecipeCard({ recipe, onPress, onToggleSave, onDelete, isSaved }: RecipeCardProps) {
     const { theme } = useTheme();
 
     return (
@@ -37,6 +38,21 @@ export function RecipeCard({ recipe, onPress, onToggleSave, isSaved }: RecipeCar
                     style={styles.heart}
                     containerColor={theme.colors.background}
                 />
+                
+                {onDelete && (
+        <IconButton
+            icon={() => (
+                <MaterialCommunityIcons
+                    name="trash-can-outline"
+                    size={18}
+                    color={theme.colors.textBlack}
+                />
+            )}
+            onPress={onDelete}
+            style={[styles.heart, { right: 40 }]}
+            containerColor={theme.colors.background}
+        />
+    )}
             </View>
 
             {/* Recipe title */}
@@ -57,6 +73,7 @@ const styles = StyleSheet.create({
     card: {
         width: 300,
         marginRight: 12,
+        marginBottom: 16,
         borderRadius: 10,
         overflow: 'hidden',
     },

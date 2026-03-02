@@ -13,6 +13,7 @@ export type Recipe = {
     recipe: Recipe;
     onPress: () => void;
     onToggleSave: () => void;
+    onDelete?: () => void; // Add delete button
     isSaved: boolean;
   };
   
