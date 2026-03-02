@@ -70,3 +70,13 @@ Code Quality: (DONE)
 Styling: (DONE)
 - Apply styles to create a visually appealing layout.
 - MaterialCommunityIcons
+
+New plan - for multiple pages:
+- Navigation:
+  - Ensure that your app uses Expo Router to support navigation.
+  - Router - Expo Documentation
+  - All of the following Expo Router features must be used:
+  - Tabs - Expo Documentation (minimum two tabs)
+  - Stack - Expo Documentation (minimum six unique screens)
+  - Modals - Expo Documentation (minimum one modal screen)
+  - Using URL parameters - Expo Documentation (minimum three screens that support parameters)

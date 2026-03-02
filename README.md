@@ -102,7 +102,7 @@
 ## Technologies Used
 - **Frontend**: React Native
 - **Backend**: Node.js, Express.js
-- **Database**: MongoDB (for future development)
+- **Database**: Async to store data
 - **API Integration**: TheMealDB API for recipes
 
 ## License
