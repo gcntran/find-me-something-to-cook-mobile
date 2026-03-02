@@ -2,6 +2,8 @@ import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { useTheme } from '../theme/theme';
 import { Recipe } from '../types';
 import { RecipeCard } from '../components/RecipeCard';
+import { useRouter } from 'expo-router';
+
 
 type NotebookProps = {
     savedRecipes: Recipe[];
@@ -10,6 +12,8 @@ type NotebookProps = {
 
 export default function NotebookScreen({ savedRecipes, onPressRecipe }: NotebookProps) {
     const { theme } = useTheme();
+    const router = useRouter();
+
 
     return (
         <ScrollView
