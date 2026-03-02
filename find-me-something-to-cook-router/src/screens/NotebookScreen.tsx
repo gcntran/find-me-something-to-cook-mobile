@@ -33,6 +33,7 @@ export default function NotebookScreen({ savedRecipes, onPressRecipe }: Notebook
                     isSaved={true}
                     onPress={() => onPressRecipe(recipe)}
                     onToggleSave={() => {}}
+                    onDelete={() => router.push(`/delete-recipe?id=${recipe.id}`)} // Add a modal for deleting recipe
                 />
             ))}
         </ScrollView>
