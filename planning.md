@@ -21,25 +21,33 @@ Step 2:
   3. Place for the search results -> ScrollView, SearchResultsSection.tsx
   4. Random recipes - Suggested Recipes -> ScrollView, RandomRecipesSection.tsx
   5. Recently viewed for history viewed recipes -> Grid of 4 recipes with a clear button, RecentlyViewedSection.tsx
-  6. A tab for favorite recipes -> Notebook (feature will be developed on next assignment)
-  7. Dark mode switch -> Switch, ThemeSwitch.tsx
-  8. A bottom tab to navigate between Home and Favorites/Notebook (for multi screen assignment)
+- Continue after assignment 1: For multiple pages
+  1. A tab to navigate between Home and Favorites/Notebook, Profile -> (tabs)
+  2. Add stack screens for viewing the recipe detail with parameters -> another component -> RecipeScreen
+  3. Users navigate to the Notebook tab -> View recipe/Delete recipe from Notebook
+  4. Add a Profile screen for setting with turn on/off -> switch
+  5. Add parameters to some screens
 ----------------------------------------------------------
 - User flows:
   - Open the app -> Home screen -> random recipes appear -> users can select any recipe -> View recipe -> Add to Notebook (if users like the recipes)
     - Viewed recipe -> recently viewed -> clear
   - Open the app -> Home screen -> random recipes appear -> users search ingredients for recipes -> press enter
-    - True -> View recipe -> Add to Notebook (if users like the recipes)
-    - False -> loading -> no recipe found -> search again (Haven't done this)
+    - View recipe -> Add to Notebook (if users like the recipes) -> view recipe screen -> delete recipe
 ----------------------------------------------------------
-For next assignment (multi screen)
-  - Add a screen for viewing the recipe detail, another component -> RecipeScreen
-  - Users navigate to the Notebook tab -> View recipe/Delete recipe from Notebook
-  - Add a profile screen for setting, backup/restore and dietary information
-  - Add MongoDB for database to store favorite recipes in Notebook
+- Navigation:
+  Ensure that app uses Expo Router to support navigation. (DONE)
+  - Router - Expo Documentation
+  All of the following Expo Router features must be used:
+  - Tabs - Expo Documentation (minimum two tabs) (DONE - I have two)
+  - Stack - Expo Documentation (minimum six unique screens) (DONE - recipe and settings screens)
+  - Modals - Expo Documentation (minimum one modal screen) (DONE - Delete modal)
+  - Using URL parameters - Expo Documentation (minimum three screens that support parameters) (DONE - I have some)
 
+!important: copy and paste folder src from assignment 1 to link the tabs and stacks instead of starting from fresh to keep the same application. 
+
+----------------------------------------------------------
 Part B: Development
-
+----------------------------------------------------------
 Create expo
 npx create-expo-app --template blank command
 
@@ -59,7 +67,7 @@ Components checklist:
 
 Third-Party Modules: (DONE)
   - React Native Paper
-  - React Navigation for bottom tab
+  - Expo Router
 
 Code Quality: (DONE)
 - let and const keywords (DONE)
@@ -71,19 +79,3 @@ Styling: (DONE)
 - Apply styles to create a visually appealing layout.
 - MaterialCommunityIcons
 
-----------------------------------------------------------------------
-
-New plan - for multiple pages:
-  - Add a screen for viewing the recipe detail, another component -> RecipeScreen
-  - Users navigate to the Notebook tab -> View recipe/Delete recipe from Notebook
-  - Add a profile screen for setting, backup/restore and dietary information
-  - Add database to store favorite recipes in Notebook
-
-- Navigation:
-  Ensure that your app uses Expo Router to support navigation.
-  - Router - Expo Documentation
-  All of the following Expo Router features must be used:
-  - Tabs - Expo Documentation (minimum two tabs)
-  - Stack - Expo Documentation (minimum six unique screens)
-  - Modals - Expo Documentation (minimum one modal screen)
-  - Using URL parameters - Expo Documentation (minimum three screens that support parameters)
