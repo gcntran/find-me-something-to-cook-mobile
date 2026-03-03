@@ -56,7 +56,7 @@ export default function SettingsSection() {
                         value={enabled}
                         onValueChange={setEnabled}
                         thumbColor={enabled ? theme.colors.primary : '#ccc'}
-                        trackColor={{ false: '#ddd', true: theme.colors.primaryMuted }}
+                        trackColor={{ false: '#ddd', true: theme.colors.primary }}
                     />
                 </View>
             </View>
