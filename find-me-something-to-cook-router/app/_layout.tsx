@@ -1,12 +1,13 @@
 import { Stack } from 'expo-router';
 import { ThemeProvider } from '../src/theme/theme';
+import { SavedRecipesProvider } from '../src/context/SavedRecipesContext';
 
 export default function RootLayout() {
   return (
     <ThemeProvider>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      </Stack>
+      <SavedRecipesProvider>
+        <Stack screenOptions={{ headerShown: false }} />
+      </SavedRecipesProvider>
     </ThemeProvider>
   );
 }
