@@ -7,8 +7,10 @@ export default function DeleteRecipeModal() {
     const { id } = useLocalSearchParams();
     const { savedRecipes, setSavedRecipes } = useSavedRecipes();
 
+    const recipeId = String(id);
+
     const handleDelete = () => {
-        setSavedRecipes(savedRecipes.filter(r => r.id !== id));
+        setSavedRecipes(savedRecipes.filter(r => String(r.id) !== recipeId));
         router.back();
     };
 
