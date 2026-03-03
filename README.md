@@ -1,7 +1,7 @@
 # Find Me Something to Cook - Mobile App
 
 ## Overview
-**Find Me Something to Cook** is an Android application designed to help users discover recipes based on the ingredients they have at home. The app aims to reduce food waste and make cooking more accessible and enjoyable.
+**Find Me Something to Cook** is an Android application built with React Native and Expo Router. It helps users discover recipes based on the ingredients they have at home. The app aims to reduce food waste and make cooking more accessible and enjoyable.
 
 ## Features
 - **Ingredient-Based Recipe Search**: Enter ingredients you have, and the app suggests recipes.
@@ -10,24 +10,26 @@
 - **Recently Viewed**: Store history recipes that you already viewed.
 - **Notebook**: Save your favorite recipes for quick access.
 - **User Profiles**: Customize preferences and dietary restrictions.
-- **Light/Dark mode**: Can switch between dark and light mode.
 
 ## App Layout
 - Screens
-  - HomeScreen: Search, random recipes, recently viewed.
-  - NotebookScreen: Saved recipes.
-  - RecipeScreen: Full recipe details fetched by ID.
-  - ProfileScreen: For settings, backup/restore and dietary information (in future development).
+  - Home (index) — Search bar, random recipes, recently viewed.
+  - Notebook — Displays saved recipes with delete modal.
+  - Recipe — Dynamic route /recipe/[id] showing full recipe details.
+  - Profile — User profile and entry point to settings.
+  - Settings Section — Dynamic route `/settings/[section with toggles].
 - Components
-  - SearchBar: Handles user input and triggers API search.
-  - RecipeCard: Displays image, title, and save button.
-  - SearchResultsSection: Shows search results.
-  - RandomRecipesSection: Shows random recipes with refresh.
-  - RecentlyViewedSection: Shows last viewed items.
-  - ThemeSwitch: Toggles light/dark mode.
+  - SearchBar — Handles user input and triggers API calls.
+  - RecipeCard — Displays recipe image, title, and save/delete actions.
+  - SearchResultsSection — Shows search results.
+  - RandomRecipesSection — Fetches and displays random recipes.
+  - RecentlyViewedSection — Shows previously opened recipes.
 - Navigation
-  - Bottom Tab Navigator for Home + Notebook.
-
+  - Expo Router with:
+    - Tab Navigator (Home, Notebook, Profile)
+    - Dynamic routes using global URL parameters (/recipe/[id], `/settings/[section])
+    - Modal routes (`/delete-recipe)
+    - Stack headers enabled per screen
 ## Theme
 **Custom Theme Provider**
 - theme (current theme object)
@@ -69,6 +71,7 @@
 **React Native Paper**
 **React Navigation**
 **Expo Vector Icons - MaterialCommunityIcons**
+**Expo Router**
 
 ## User Flows
 1. User opens the app → random recipes load.
@@ -78,8 +81,8 @@
 5. The viewed recipe is added to Recently Viewed.
 6. Users can save/unsave recipes anywhere.
 7. Notebook tab shows saved recipes.
-8. ThemeSwitch toggles light/dark mode globally.
-9. Profile tab shows settings and dietary information.
+8. User can delete the saved recipe (not functional yet).
+9. Profile tab shows settings to switch on/off.
 
 ## Installation
 1. Clone the repository:
