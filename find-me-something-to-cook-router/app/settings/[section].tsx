@@ -1,10 +1,13 @@
 import { useLocalSearchParams, Stack } from 'expo-router';
-import { View, Text } from 'react-native';
+import { View, Text, Switch } from 'react-native';
 import { useTheme } from '../../src/theme/theme';
+import { useState } from 'react';
 
 export default function SettingsSection() {
     const { section } = useLocalSearchParams<{ section: string }>();
     const { theme } = useTheme();
+
+    const [enabled, setEnabled] = useState(false);
 
     const title =
         section && section.length > 0
@@ -37,14 +40,25 @@ export default function SettingsSection() {
                     {title} Settings
                 </Text>
 
-                <Text
+                <View
                     style={{
-                        fontSize: 16,
-                        color: theme.colors.textMuted,
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        paddingVertical: 12,
                     }}
                 >
-                    This is the settings page for: {section}
-                </Text>
+                    <Text style={{ fontSize: 18, color: theme.colors.textBlack }}>
+                        Turn ON/OFF
+                    </Text>
+
+                    <Switch
+                        value={enabled}
+                        onValueChange={setEnabled}
+                        thumbColor={enabled ? theme.colors.primary : '#ccc'}
+                        trackColor={{ false: '#ddd', true: theme.colors.primaryMuted }}
+                    />
+                </View>
             </View>
         </>
     );
