@@ -1,11 +1,28 @@
 import { Tabs } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { SavedRecipesProvider } from '../../src/context/SavedRecipesContext';
+import { useTheme } from '../../src/theme/theme';
 
 export default function TabsLayout() {
+  const { theme } = useTheme();
+
   return (
     <SavedRecipesProvider>
-      <Tabs>
+      <Tabs
+        screenOptions={{
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: theme.colors.header,
+          },
+          headerTintColor: theme.colors.textBlack,
+          tabBarActiveTintColor: theme.colors.primary,
+          tabBarInactiveTintColor: theme.colors.textMuted,
+          tabBarStyle: {
+            backgroundColor: theme.colors.background,
+            borderTopColor: theme.colors.header,
+          },
+        }}
+      >
         <Tabs.Screen
           name="index"
           options={{
@@ -15,6 +32,7 @@ export default function TabsLayout() {
             ),
           }}
         />
+
         <Tabs.Screen
           name="notebook"
           options={{
@@ -24,6 +42,7 @@ export default function TabsLayout() {
             ),
           }}
         />
+
         <Tabs.Screen
           name="profile"
           options={{
