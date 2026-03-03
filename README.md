@@ -15,7 +15,7 @@
 - Screens
   - Home (index) — Search bar, random recipes, recently viewed.
   - Notebook — Displays saved recipes with delete modal.
-  - Recipe — Dynamic route /recipe/[id] showing full recipe details.
+  - Recipe — Dynamic route /recipe/[id] showing recipe id detail.
   - Profile — User profile and entry point to settings.
   - Settings Section — Dynamic route `/settings/[section with toggles].
 - Components
